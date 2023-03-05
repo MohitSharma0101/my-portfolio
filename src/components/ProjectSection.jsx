@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading"
 
 export default function ProjectSection(){
     return(
-        <Wrapper>
+        <Wrapper id="projects">
             <SectionHeading title={"Projects"}/>
             <ProjectList>
                 {
@@ -19,7 +19,7 @@ export default function ProjectSection(){
 }
 
 const Wrapper = styled.div`
-    padding: 24px 0;
+    padding-top: 42px;
 `
 
 const ProjectList = styled.div`

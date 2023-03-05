@@ -1,16 +1,16 @@
 const timeline = [
     {
         year: "2023",
-        yearColor: "deeppink",
+        yearColor: "coral",
         companyName: "Amazon",
-        companyWebsite: "",
+        companyWebsite: "https://www.amazon.in/",
         workProfile: "SDET Intern",
         workDesc: "Currently working as SDET Intern at AMAZON.",
         letterOfAppreciation:"",
     },
     {
         year: "2022",
-        yearColor: "#d2d2d2",
+        yearColor: "deeppink",
         companyName: "",
         companyWebsite: "",
         workProfile: "...",
@@ -21,7 +21,7 @@ const timeline = [
         year: "2021",
         yearColor: "deepskyblue",
         companyName: "StartWithGenesis",
-        companyWebsite: "",
+        companyWebsite: "https://www.linkedin.com/company/startwithgenesis/?originalSubdomain=in",
         workProfile: "Android Developer Intern",
         workDesc: `Optimized the code and overall structure of the application as measured by the reduction in load time by 50% on implementing the MVVM architecture pattern and using best practices.
         Implemented 15+ UI screens for multiple sections in the app making the whole user experience more interactive and elegant.

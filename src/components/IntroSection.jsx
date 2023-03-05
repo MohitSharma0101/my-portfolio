@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 export function IntroSection() {
 
     return (
-        <Wrapper>
+        <Wrapper id="home">
             <Content>
                 Hi 👋,
                 <br />
@@ -29,7 +29,7 @@ const Content = styled.div`
 
 const Name = styled.div`
 width: fit-content;
-background: -webkit-linear-gradient(109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1%);
+background: -webkit-linear-gradient(120deg, #f093fb 0%, #f5576c 100%);;
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;

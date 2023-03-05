@@ -6,7 +6,7 @@ import TagWithIcon from "./TagWithIcon"
 
 export function Timeline({timeline}) {
     return (
-        <Wrapper>
+        <Wrapper id="timeline">
             <SectionHeading title={"Timeline"}/>
             <Content>
                 {
@@ -60,7 +60,7 @@ const Year = styled.div`
 function YearDesc(props) {
     return (
         <YearDescWrapper>
-            <CompanyName color={props.yearColor}>
+            <CompanyName href={props.companyWebsite} target="_blank" color={props.yearColor}>
                 {props.companyName}
                 {props.companyName !== "" ? <ExternalLinkIcon color={"#d2d2d2"}/>:null }
                 </CompanyName>
@@ -88,7 +88,7 @@ const YearDescWrapper = styled.div`
     margin-left: 50px;
 `
 
-const CompanyName = styled.div`
+const CompanyName = styled.a`
     font-size: 3rem;
     font-weight: 700;
     cursor: pointer;

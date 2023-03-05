@@ -1,14 +1,15 @@
 import { MenuIcon } from "./Icons/Icons"
 import styled, { keyframes } from "styled-components"
+import Logo from "./Logo"
 
 export default function NavBar() {
     return (
         <Wrapper>
-            <Logo >
+            <Logo>
                 <span>MS</span>
             </Logo>
             <MenuItems />
-            <MenuIcon color={"black"} />
+            {/* <MenuIcon color={"black"} /> */}
         </Wrapper>
     )
 }
@@ -19,54 +20,29 @@ const Wrapper = styled.div`
     width:100%;
     background-color: white;
     color:black;
-    border-radius:12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 0;
+    padding: 18px 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 
     svg{
         cursor: pointer;
     }
 `
 
-const rotate = keyframes`
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-`
-
-const Logo = styled.div`
-    width: 45px;
-    height: 45px;
-    border: 2px solid lavender;
-    position: relative;
-    cursor: pointer;
-
-    &:hover{
-        animation: ${rotate} 2s linear infinite;
-    }
-    
-
-    span{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 2px 4px;
-        color: crimson;
-    }
-
-`
 
 function MenuItems() {
-    const items = ["Home", "Timeline", "Projects", "Blogs", "About Me"]
+    const items = ["Home", "Timeline", "Projects", "Blogs"]
     return (
         <MenuNavWrapper>
             {
-                items.map((item) => (<Item key={item}>{item}</Item>))
+                items.map((item) => (<Item key={item} onClick={()=>{
+                    const section = document.getElementById(item.toLocaleLowerCase());
+                    section.scrollIntoView({behavior:"smooth"})
+                }}>{item}</Item>))
             }
         </MenuNavWrapper>
     )

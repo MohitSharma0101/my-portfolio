@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import AppContainer from '@/components/AppContainer'
 import HomeComponent from '@/components/PageComponents/HomeComponent'
+import NavBar from '@/components/NavBar'
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppContainer>
+      <NavBar />
       <HomeComponent />
       </AppContainer>
     </>
