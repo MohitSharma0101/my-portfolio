@@ -69,7 +69,7 @@ function YearDesc(props) {
                 {props.workDesc}
             </WorkDesc>
             {
-                props.letterOfAppreciation !== "" ?
+                props.letterOfAppreciation !== ""   ?
                     <TagWithIcon
                         text="Letter Of Appreciation"
                         color={"white"}
