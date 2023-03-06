@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import styled, { keyframes } from "styled-components"
 
 export function IntroSection() {
@@ -28,16 +29,12 @@ const Content = styled.div`
 `
 
 const Name = styled.div`
-width: fit-content;
-background: -webkit-linear-gradient(120deg, #f093fb 0%, #f5576c 100%);;
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-size: 3rem;
-display: flex;
-justify-content: start;
-margin: 12px 0;
-    
+    width: fit-content;
+    color: deepskyblue;
+    font-size: 3rem;
+    display: flex;
+    justify-content: start;
+    margin: 12px 0;
 `
 const Desc = styled.div`
     font-size: 1.4rem;
@@ -46,20 +43,21 @@ const Desc = styled.div`
 `
 
 const typing = keyframes`
-    from { width: 0 }
+    from { width: 0%  }
     to { width: 100% }
 `
 const blinkCaret = keyframes`
     from, to { border-color: transparent }
-  50% { border-color: deeppink; }
+    50% { border-color: deeppink; }
 `
 
 const TypeWriter = styled.div`
+    width:0;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid deeppink; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
-        ${typing} 1.5s steps(20, end),
+        ${typing} 1.5s steps(20, end) forwards,
         ${blinkCaret} .5s step-end infinite;
 `

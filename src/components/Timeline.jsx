@@ -93,6 +93,7 @@ const CompanyName = styled.a`
     font-weight: 700;
     cursor: pointer;
     transition: color .1s linear;
+    color: black;
 
     &:hover{
         color:${props=> props.color || "black"};

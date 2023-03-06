@@ -66,7 +66,7 @@ const Content = styled.div`
     grid-template-rows: auto auto 1fr auto;
 `
 
-const Title = styled.a`
+const Title = styled.div`
     font-size: 1.6rem;
     font-weight: 700;
     display: flex;

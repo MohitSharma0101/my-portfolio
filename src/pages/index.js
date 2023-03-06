@@ -14,8 +14,8 @@ export default function Home() {
         <link rel="icon" href="/mslogo.ico" />
       </Head>
       <AppContainer>
-      <NavBar />
-      <HomeComponent />
+        <NavBar />
+        <HomeComponent />
       </AppContainer>
     </>
   )
