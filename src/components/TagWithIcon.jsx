@@ -1,13 +1,12 @@
-import Link from "next/link"
 import styled from "styled-components"
 
-export default function TagWithIcon({text,color,backgroundColor,Icon,link,iconDirection}){
+export default function TagWithIcon({ text, color, backgroundColor, Icon, link, iconDirection }) {
     return (
         <a href={link} target="_blank">
-        <Wrapper color={color} backgroundColor={backgroundColor} iconDirection={iconDirection}>
-            {text}
-            <Icon />
-        </Wrapper>
+            <Wrapper color={color} backgroundColor={backgroundColor} iconDirection={iconDirection}>
+                {text}
+                <Icon />
+            </Wrapper>
         </a>
     )
 }
@@ -25,5 +24,5 @@ const Wrapper = styled.div`
     width: fit-content;
     font-size: .8rem;
     cursor: pointer;
-    flex-direction: ${props => props.iconDirection === "start"  ? "row-reverse" : "row" || "row"};
+    flex-direction: ${props => props.iconDirection === "start" ? "row-reverse" : "row" || "row"};
 `
