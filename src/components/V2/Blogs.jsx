@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import blogs from "../Data/blogData";
 import QUERIES from "../Utils/Queries";
+import SectionHeading from "./SectionHeading";
 
 export default function Blogs() {
     return (
         <Wrapper data-section id="blog">
+             <SectionHeading title={"Blog"}/>
             <List>
                 {
                     blogs.map((blog) => (

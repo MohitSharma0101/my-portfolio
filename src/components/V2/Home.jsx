@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Header from "./Header";
 import About from "./About";
 import Experience from "./Experience";
@@ -8,7 +8,7 @@ import QUERIES from "../Utils/Queries";
 
 export default function Home() {
     return (
-        <Wrapper>
+            <Wrapper>
                 <InsideWrapper >
                     <Header />
                     <Content id="content" >
@@ -22,7 +22,7 @@ export default function Home() {
                 TODO
                 <Cursor/>
                 */}
-        </Wrapper>
+            </Wrapper>
     );
 };
 
@@ -33,6 +33,13 @@ const Wrapper = styled.section`
     align-items: center;
     background-color: ${props => props.theme.background};
     color: ${props => props.theme.text};
+
+    p{
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        color: ${props => props.theme.secondaryText};
+    }
 `;
 
 const InsideWrapper = styled.section`

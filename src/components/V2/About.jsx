@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import SectionHeading from "./SectionHeading";
 
 export default function About() {
     return (
         <Wrapper data-section id="about">
+            <SectionHeading title={"About"}/>
             <p>
                 <strong>Back in <time dateTime="2020">2020</time>,</strong> I took my first dive into the world of programming,
                 creating a bunch of apps and instantly falling in love with
@@ -31,5 +33,6 @@ const Wrapper = styled.section`
         font-weight: 300;
         line-height: 1.5;
         margin-bottom: 1rem;
+        color: ${props => props.theme.secondaryText};
     }
 `;

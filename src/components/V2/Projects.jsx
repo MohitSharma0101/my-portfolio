@@ -3,10 +3,12 @@ import projects from "../Data/projectData";
 import TagWithIcon from "../TagWithIcon";
 import { ExternalLinkIcon, GithubIcon } from "../Icons/Icons";
 import QUERIES from "../Utils/Queries";
+import SectionHeading from "./SectionHeading";
 
 export default function Projects() {
     return (
         <Wrapper data-section id="project">
+            <SectionHeading title={"Project"}/>
             <List>
                 {
                     projects.map(project => (

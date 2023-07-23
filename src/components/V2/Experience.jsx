@@ -3,10 +3,12 @@ import EXPERIENCE from "../Data/ExperienceData";
 import TagWithIcon from "../TagWithIcon";
 import { AwardIcon } from "../Icons/Icons";
 import QUERIES from "../Utils/Queries";
+import SectionHeading from "./SectionHeading";
 
 export default function Experience() {
     return (
         <Wrapper data-section id="exp">
+             <SectionHeading title={"Experience"}/>
             <Experience.List>
                 {
                     EXPERIENCE.map(exp => (

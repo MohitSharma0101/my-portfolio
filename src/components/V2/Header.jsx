@@ -223,7 +223,6 @@ const Social = styled.ul`
     list-style: none;
 `;
 
-
 const jump = keyframes`
     from {
         transform: translate(0);
