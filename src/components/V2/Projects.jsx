@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import projects from "../Data/projectData";
 import TagWithIcon from "../TagWithIcon";
 import { ExternalLinkIcon, GithubIcon } from "../Icons/Icons";
+import QUERIES from "../Utils/Queries";
 
 export default function Projects() {
     return (
@@ -46,6 +47,10 @@ const List = styled.ol`
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+
+    @media ${QUERIES.tabletOrSmaller} {
+       justify-content: center;
+    }
 `;
 
 const Image = styled.div`
@@ -54,6 +59,7 @@ const Image = styled.div`
     overflow: hidden;
     border-radius: 12px;
     border: 2px solid hsl(0 0% 50%);
+    
     img{
         width: 100%;
         height: 100%;
@@ -102,14 +108,26 @@ const Project = styled.li`
     width: 45%;
     cursor: pointer;
     gap: 1rem;
-    &:hover{
-        background-color: ${props => props.theme.onBackground};
+
+    @media ${QUERIES.desktopOrLarger} {
+        &:hover{
+            background-color: ${props => props.theme.onBackground};
+        }
+        &:hover ${Title} {
+            color: ${props => props.theme.accent};
+        }
+        &:hover #extIcon {
+            stroke: ${props => props.theme.accent};
+            animation: ${daigonal} .4s infinite ease alternate;
+        }
     }
-    &:hover ${Title}{
-        color: ${props => props.theme.accent};
+
+    @media ${QUERIES.tabletOrSmaller} {
+        width: 30%;
+        min-width: 250px;
     }
-    &:hover #extIcon{
-        stroke: ${props => props.theme.accent};
-        animation: ${daigonal} .4s infinite ease alternate;
+
+    @media ${QUERIES.mobileOrSmaller} {
+        width: 100%;
     }
 `;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import blogs from "../Data/blogData";
+import QUERIES from "../Utils/Queries";
 
 export default function Blogs() {
     return (
@@ -61,6 +62,10 @@ const Cover = styled.div`
         object-fit: cover;
         transition: all .2s linear;
     }
+
+    @media ${QUERIES.mobileOrSmaller} {
+        width: 200px;
+    }
 `;
 
 const Title = styled.h1`
@@ -81,6 +86,10 @@ const Tags = styled.div`
     gap: 10px;
     font-size: 0.75rem;
     font-weight: 400;
+
+    @media ${QUERIES.mobileOrSmaller} {
+        display: flex;
+    }
 `;
 
 const Tag = styled.div`
@@ -95,6 +104,11 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media ${QUERIES.tabletOrSmaller} {
+        width: 100%;
+        gap: 1rem;
+    }
 `;
 
 const Blog = styled.a`    
@@ -103,19 +117,23 @@ const Blog = styled.a`
     padding: 1rem;
     border-radius: 12px;
 
-    &:hover ${Cover}{
-        width: 300px;
+    @media ${QUERIES.desktopOrLarger} {
+        &:hover ${Cover}{
+            width: 300px;
+        }
+        &:hover ${Tags}{
+            display: flex;
+        }
+        &:hover ${Title}{
+            color: ${props => props.theme.accent};
+        }
+        &:hover{
+            background-color: ${props => props.theme.onBackground};
+        }
     }
 
-    &:hover ${Tags}{
-        display: flex;
-    }
-
-    &:hover ${Title}{
-        color: ${props => props.theme.accent};
-    }
-
-    &:hover{
-        background-color: ${props => props.theme.onBackground};
+    @media ${QUERIES.mobileOrSmaller} {
+        width: 100%;
+        flex-direction: column;
     }
 `;

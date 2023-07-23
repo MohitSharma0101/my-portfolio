@@ -2,6 +2,7 @@ import styled from "styled-components";
 import EXPERIENCE from "../Data/ExperienceData";
 import TagWithIcon from "../TagWithIcon";
 import { AwardIcon } from "../Icons/Icons";
+import QUERIES from "../Utils/Queries";
 
 export default function Experience() {
     return (
@@ -38,9 +39,15 @@ Experience.List = styled.ol`
         padding: 1rem;
         cursor: pointer;
         border-radius: 12px;
+
+        @media ${QUERIES.mobileOrSmaller} {
+            flex-wrap: wrap;
+        }
     }
-    li:hover{
-        background-color: ${props => props.theme.onBackground};
+    @media ${QUERIES.desktopOrLarger} {
+            li:hover {
+                background-color: ${props => props.theme.onBackground};
+            }
     }
 `;
 
@@ -86,10 +93,18 @@ Experience.Item = ({ exp }) => {
 
 Experience.Item.Timeline = styled.div`
     width: 20%;
+
+    @media ${QUERIES.mobileOrSmaller} {
+        width: 100%;
+    }
 `;
 
 Experience.Item.Content = styled.div`
     width: 80%;
+
+    @media ${QUERIES.mobileOrSmaller} {
+        width: 100%;
+    }
 `;
 
 Experience.Item.Content.Company = styled.h1`
@@ -107,7 +122,8 @@ Experience.Item.Content.Position = styled.span`
 `;
 
 Experience.Item.Content.About = styled.div`
-    margin: 1rem 0;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 `;
 
 const Icon = styled.div`
@@ -117,8 +133,10 @@ const Icon = styled.div`
     transition: all .3s linear;
     cursor: pointer;
 
-    &:hover{
-        margin-left: -18px;
+    @media ${QUERIES.desktopOrLarger} {
+        &:hover{
+            margin-left: -18px;
+        }
     }
 
     img{

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { GithubIcon, LinkedInIcon, MailIcon, TwiterIcon } from "../Icons/Icons";
+import QUERIES from "../Utils/Queries";
 
 export const NAV_LINKS = [
     {
@@ -132,6 +133,14 @@ const Wrapper = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media ${QUERIES.tabletOrSmaller} {
+        position: revert;
+        height: fit-content;
+        gap: 2rem;
+        padding: 56px 0;
+        width: 100%;
+    }
 `;
 
 const Info = styled.section`
@@ -169,6 +178,10 @@ Navigation.List = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+
+    @media ${QUERIES.tabletOrSmaller} {
+        display: none;
+    }
 `;
 
 Navigation.Item = styled.li`
@@ -186,11 +199,14 @@ Navigation.Item = styled.li`
         position: absolute;
         margin-left: -12px;
     }
-    &:hover{
-        font-size: 2rem;
-    }
-    &:hover::before{
-        width: 4px;
+    
+    @media ${QUERIES.desktopOrLarger} {
+        &:hover{
+            font-size: 2rem;
+        }
+        &:hover::before{
+            width: 4px;
+        }
     }
 `;
 
@@ -221,10 +237,11 @@ Social.Item = styled.li`
     svg{
         margin: 4px;
     }
-    svg:hover{
-        
-        stroke: ${props => props.theme.accent};;
-        animation: ${jump} .4s infinite ease alternate;
+    @media ${QUERIES.desktopOrLarger} {
+        svg:hover {
+            stroke: ${props => props.theme.accent};;
+            animation: ${jump} .4s infinite ease alternate;
+        }
     }
 `;
 

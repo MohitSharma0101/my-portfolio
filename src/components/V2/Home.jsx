@@ -4,19 +4,24 @@ import About from "./About";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Blogs from "./Blogs";
+import QUERIES from "../Utils/Queries";
 
-export default function Home(){
+export default function Home() {
     return (
         <Wrapper>
-            <InsideWrapper >
-                <Header />
-                <Content id="content" >
-                    <About />
-                    <Experience />
-                    <Projects />
-                    <Blogs/>
-                </Content>
-            </InsideWrapper>
+                <InsideWrapper >
+                    <Header />
+                    <Content id="content" >
+                        <About />
+                        <Experience />
+                        <Projects />
+                        <Blogs />
+                    </Content>
+                </InsideWrapper>
+                {/*
+                TODO
+                <Cursor/>
+                */}
         </Wrapper>
     );
 };
@@ -33,9 +38,17 @@ const Wrapper = styled.section`
 const InsideWrapper = styled.section`
     width: 100%;
     max-width: 1200px;
-    margin: 0 24px;
+    margin: 0 32px;
     display: flex;
     position: relative;
+
+    @media ${QUERIES.tabletOrSmaller} {
+        flex-direction: column;
+    }
+
+    @media ${QUERIES.mobileOrSmaller} {
+        margin: 0 16px;
+    }
 `;
 
 const Content = styled.main`
@@ -47,4 +60,10 @@ const Content = styled.main`
     display: flex;
     flex-direction: column;
     gap: 6rem;
+        
+    @media ${QUERIES.tabletOrSmaller} {
+        width: 100%;
+        position: revert;
+        gap: 4rem;
+    }
 `;
