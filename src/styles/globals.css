@@ -16,9 +16,8 @@ html,body{
   background-color: #1E1E1E;
 }
 
-a{
+a , :is(:visited) { 
   text-decoration: none;
-}
-:is(a:visited) { 
   color: inherit; 
+  cursor: pointer;
 }

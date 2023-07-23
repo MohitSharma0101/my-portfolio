@@ -7,17 +7,20 @@ export default function Blogs() {
             <List>
                 {
                     blogs.map((blog) => (
-                        <Blog>
+                        <Blog href={blog.link} target="_blank">
                             <Cover>
                                 <img src={`/images/blogs/${blog.cover}`} alt={blog.title} />
                             </Cover>
                             <Content>
-                                <Title>
-                                    {blog.title}
+                                <div>
+                                    <Title>
+                                        {blog.title}
+                                    </Title>
                                     <Description >
                                         {blog.desc}
                                     </Description>
-                                </Title>
+                                </div>
+
                                 <Tags >
                                     {
                                         blog.tags.map((tag) => (
@@ -94,19 +97,22 @@ const Content = styled.div`
     justify-content: space-between;
 `;
 
-const Blog = styled.section`
+const Blog = styled.a`    
     display: flex;
     gap: 1rem;
-    cursor: pointer;
     padding: 1rem;
     border-radius: 12px;
 
-    &:hover > ${Cover}{
+    &:hover ${Cover}{
         width: 300px;
     }
 
-    &:hover > ${Content} > ${Tags}{
+    &:hover ${Tags}{
         display: flex;
+    }
+
+    &:hover ${Title}{
+        color: ${props => props.theme.accent};
     }
 
     &:hover{

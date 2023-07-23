@@ -15,7 +15,7 @@ const blogs = [
         readTime: "3 min read",
         link: "https://medium.com/@algopoint.ltd/how-to-create-a-slideshow-carousel-using-html-css-js-7ab0561b39b3",
         tags: ["HTML", "CSS", "JS", "UI/UX", "Animations"],
-        desc: "Hello folks, I have been tasked to build an OTP verification Page and found it a little challenging because the Internet doesn’t have enough resources.That’s why I thought to write a blog about it.",
+        desc: "I’ve recently been working on a project where I need to implement a slideshow/carousel. I searched on google but didn’t find the carousel with multiple features. ",
     },
     {
         title: "Emoji Slider in Jetpack Compose",
@@ -35,5 +35,5 @@ const blogs = [
         tags: ["Jetpack Compose", "Android", "Kotlin", "Animations"],
         desc: "I always find it amusing how Instagram creates such beautiful animations and as I was trying jetpack compose I thought let's try to build a double-tap to like animation and you won't believe how easy it was to create such animation.",
     },
-]
+];
 export default blogs;

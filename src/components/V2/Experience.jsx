@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import EXPERIENCE from "../Data/ExperienceData";
+import TagWithIcon from "../TagWithIcon";
+import { AwardIcon } from "../Icons/Icons";
 
 export default function Experience() {
     return (
@@ -56,6 +58,8 @@ Experience.Item = ({ exp }) => {
                 <Experience.Item.Content.About>
                     {exp.about}
                 </Experience.Item.Content.About>
+                {/* 
+                TODO: Replace all the tech stack images with new ones that don't have a background.
                 <Stack>
                     {
                         exp.techStack.map((icon) => (
@@ -64,7 +68,17 @@ Experience.Item = ({ exp }) => {
                             </Icon>
                         ))
                     }
-                </Stack>
+                </Stack> 
+                */}
+                {
+                    exp?.letterOfAppreciation !== "" ?
+                        <TagWithIcon
+                            text="Letter Of Appreciation"
+                            color={"white"}
+                            Icon={AwardIcon}
+                            link={exp.letterOfAppreciation}
+                        />
+                        : null}
             </Experience.Item.Content>
         </li>
     );
@@ -93,7 +107,7 @@ Experience.Item.Content.Position = styled.span`
 `;
 
 Experience.Item.Content.About = styled.div`
-    margin-top: 1rem;
+    margin: 1rem 0;
 `;
 
 const Icon = styled.div`

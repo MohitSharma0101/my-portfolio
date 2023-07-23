@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { GithubIcon, LinkedInIcon, MailIcon, TwiterIcon } from "../Icons/Icons";
 
 export const NAV_LINKS = [
     {
@@ -21,10 +22,26 @@ export const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-    "Insta",
-    "Twitter",
-    "LinkedIn",
-    "Github"
+    {
+        id: "github",
+        icon: (<GithubIcon stroke={1.8} size={26} />),
+        link: "https://github.com/MohitSharma0101",
+    },
+    {
+        id: "linkedin",
+        icon: (<LinkedInIcon size={26} stroke={1.8} />),
+        link: "https://www.linkedin.com/in/mohitsha01/",
+    },
+    {
+        id: "twitter",
+        icon: (<TwiterIcon size={26} stroke={1.8} />),
+        link: "",
+    },
+    {
+        id: "mail",
+        icon: (<MailIcon size={26} stroke={1.8} />),
+        link: "mailto:mohit.sha701485@gmail.com",
+    },
 ];
 
 export default function Header() {
@@ -39,10 +56,10 @@ export default function Header() {
             if (visibleSection) {
                 setActiveSection(visibleSection.id);
             }
-        },{
+        }, {
             rootMargin: "0px",
-            threshold: 1.0,
-          });
+            threshold: [1, 0.2],
+        });
         //Get custom attribute data-section from all sections
         const sections = document.querySelectorAll('[data-section]');
 
@@ -74,14 +91,14 @@ export default function Header() {
                 <Navigation.List>
                     {
                         NAV_LINKS.map((link) => (
-                            <Navigation.Item 
-                                key={link.id} 
+                            <Navigation.Item
+                                key={link.id}
                                 active={link.id === activeSection}
-                                onClick={()=>{
+                                onClick={() => {
                                     const section = document.getElementById(link.id);
-                                    section.scrollIntoView({behavior:"smooth"})
+                                    section.scrollIntoView({ behavior: "smooth" })
                                 }}
-                                >
+                            >
                                 <Navigation.Link >
                                     {link.name}
                                 </Navigation.Link>
@@ -92,10 +109,10 @@ export default function Header() {
             </Navigation>
             <Social>
                 {
-                    SOCIAL_LINKS.map((link) => (
-                        <Social.Item key={link}>
-                            <Social.Link>
-                                {link}
+                    SOCIAL_LINKS.map((item) => (
+                        <Social.Item key={item.id}>
+                            <Social.Link href={item.link} target="_blank">
+                                {item.icon}
                             </Social.Link>
                         </Social.Item>
                     ))
@@ -186,14 +203,31 @@ Navigation.Link = styled.a`
 
 const Social = styled.ul`
     display: flex;
-    gap: 12px;
+    gap: 1rem;
     list-style: none;
 `;
 
-Social.Item = styled.li`
 
+const jump = keyframes`
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translateY(-8px);
+    }
+`
+
+Social.Item = styled.li`
+    svg{
+        margin: 4px;
+    }
+    svg:hover{
+        
+        stroke: ${props => props.theme.accent};;
+        animation: ${jump} .4s infinite ease alternate;
+    }
 `;
 
 Social.Link = styled.a`
-    
+
 `;

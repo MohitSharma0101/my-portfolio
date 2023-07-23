@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import projects from "../Data/projectData";
 import TagWithIcon from "../TagWithIcon";
-import { GithubIcon } from "../Icons/Icons";
+import { ExternalLinkIcon, GithubIcon } from "../Icons/Icons";
 
 export default function Projects() {
     return (
@@ -14,17 +14,20 @@ export default function Projects() {
                                 <img src={`/images/projects/${project.cover}.png`} alt={project.title} />
                             </Image>
                             <Content>
-                                <Title>
-                                    {project.title}
+                                <div>
+                                    <Title >
+                                        {project.title}
+                                        <ExternalLinkIcon id="extIcon" color={"white"} stroke={1.4} size={20} />
+                                    </Title>
                                     <Description>
                                         {project.desc}
                                     </Description>
-                                </Title>
+                                </div>
                                 <TagWithIcon
                                     text={"Open Source"}
                                     Icon={GithubIcon}
                                     backgroundColor={project.color}
-                                    link={project.source} 
+                                    link={project.source}
                                 />
                             </Content>
                         </Project>
@@ -43,19 +46,6 @@ const List = styled.ol`
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-`;
-
-const Project = styled.li`
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    border-radius: 12px;
-    width: 45%;
-    cursor: pointer;
-    gap: 1rem;
-    &:hover{
-        background-color: ${props => props.theme.onBackground};
-    }
 `;
 
 const Image = styled.div`
@@ -83,6 +73,9 @@ const Content = styled.div`
 const Title = styled.h1`
     font-size: 1rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 `;
 
 const Description = styled.p`
@@ -90,4 +83,33 @@ const Description = styled.p`
     font-weight: 300;
     line-height: 1.5;
     margin-top: 0.2rem;
+`;
+
+const daigonal = keyframes`
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(4px, -4px);
+    }
+`
+
+const Project = styled.li`
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 45%;
+    cursor: pointer;
+    gap: 1rem;
+    &:hover{
+        background-color: ${props => props.theme.onBackground};
+    }
+    &:hover ${Title}{
+        color: ${props => props.theme.accent};
+    }
+    &:hover #extIcon{
+        stroke: ${props => props.theme.accent};
+        animation: ${daigonal} .4s infinite ease alternate;
+    }
 `;
