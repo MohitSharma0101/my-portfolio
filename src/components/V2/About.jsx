@@ -5,7 +5,7 @@ export default function About() {
     return (
         <Wrapper data-section id="about">
             <p>
-                <strong>Back in <time datetime="2020">2020</time>,</strong> I took my first dive into the world of programming,
+                <strong>Back in <time dateTime="2020">2020</time>,</strong> I took my first dive into the world of programming,
                 creating a bunch of apps and instantly falling in love with
                 building <strong>digital products</strong> that make a real impact on people's lives.
             </p>

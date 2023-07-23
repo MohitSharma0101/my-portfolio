@@ -8,7 +8,7 @@ export default function Blogs() {
             <List>
                 {
                     blogs.map((blog) => (
-                        <Blog href={blog.link} target="_blank">
+                        <Blog key={blog.title} href={blog.link} target="_blank">
                             <Cover>
                                 <img src={`/images/blogs/${blog.cover}`} alt={blog.title} />
                             </Cover>

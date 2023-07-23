@@ -10,27 +10,25 @@ export default function Projects() {
             <List>
                 {
                     projects.map(project => (
-                        <Project>
+                        <Project key={project.title}>
                             <Image>
                                 <img src={`/images/projects/${project.cover}.png`} alt={project.title} />
                             </Image>
-                            <Content>
-                                <div>
-                                    <Title >
-                                        {project.title}
-                                        <ExternalLinkIcon id="extIcon" color={"white"} stroke={1.4} size={20} />
-                                    </Title>
-                                    <Description>
-                                        {project.desc}
-                                    </Description>
-                                </div>
-                                <TagWithIcon
-                                    text={"Open Source"}
-                                    Icon={GithubIcon}
-                                    backgroundColor={project.color}
-                                    link={project.source}
-                                />
+                            <Content href={project.liveLink === "" ? project.source : project.liveLink} target="_blank">
+                                <Title >
+                                    {project.title}
+                                    <ExternalLinkIcon id="extIcon" color={"white"} stroke={1.4} size={20} />
+                                </Title>
+                                <Description>
+                                    {project.desc}
+                                </Description>
                             </Content>
+                            <TagWithIcon
+                                text={"Open Source"}
+                                Icon={GithubIcon}
+                                backgroundColor={project.color}
+                                link={project.source}
+                            />
                         </Project>
                     ))
                 }
@@ -59,7 +57,7 @@ const Image = styled.div`
     overflow: hidden;
     border-radius: 12px;
     border: 2px solid hsl(0 0% 50%);
-    
+
     img{
         width: 100%;
         height: 100%;
@@ -68,7 +66,7 @@ const Image = styled.div`
     }
 `;
 
-const Content = styled.div`
+const Content = styled.a`
     display: flex;
     flex-grow: 1;
     flex-direction: column;
