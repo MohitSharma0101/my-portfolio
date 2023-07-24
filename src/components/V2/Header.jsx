@@ -86,7 +86,7 @@ export default function Header() {
                         Software Developer | Previosly at Amazon
                     </Title>
                     <Description>
-                        I build accessible, inclusive products and digital experiences for the web.
+                        Driven by curiosity, creating dynamic digital experiences for the web and app.
                     </Description>
                 </Info>
                 <Navigation.List>

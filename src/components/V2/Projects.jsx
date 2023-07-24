@@ -8,7 +8,7 @@ import SectionHeading from "./SectionHeading";
 export default function Projects() {
     return (
         <Wrapper data-section id="project">
-            <SectionHeading title={"Project"}/>
+            <SectionHeading title={"Project"} />
             <List>
                 {
                     projects.map(project => (
@@ -17,13 +17,15 @@ export default function Projects() {
                                 <img src={`/images/projects/${project.cover}.png`} alt={project.title} />
                             </Image>
                             <Content href={project.liveLink === "" ? project.source : project.liveLink} target="_blank">
-                                <Title >
-                                    {project.title}
-                                    <ExternalLinkIcon id="extIcon" color={"white"} stroke={1.4} size={20} />
-                                </Title>
-                                <Description>
-                                    {project.desc}
-                                </Description>
+                                <div>
+                                    <Title >
+                                        {project.title}
+                                        <ExternalLinkIcon id="extIcon" color={"white"} stroke={1.4} size={20} />
+                                    </Title>
+                                    <Description>
+                                        {project.desc}
+                                    </Description>
+                                </div>
                             </Content>
                             <TagWithIcon
                                 text={"Open Source"}
