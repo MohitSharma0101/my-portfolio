@@ -59,7 +59,7 @@ export default function Header() {
             }
         }, {
             rootMargin: "0px",
-            threshold: [1, 0.2],
+            threshold: [0.2,1],
         });
         //Get custom attribute data-section from all sections
         const sections = document.querySelectorAll('[data-section]');
@@ -127,12 +127,13 @@ export default function Header() {
 const Wrapper = styled.header`
     width: 45%;
     height: 100vh;
-    padding: 96px 0;
+    padding: 6rem 0;
     position: sticky;
     top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap:1.8rem;
 
     @media ${QUERIES.tabletOrSmaller} {
         position: revert;
