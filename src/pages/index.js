@@ -2,6 +2,7 @@ import Home from "@/components/V2/Home";
 import { DARK_THEME } from "@/styles/Theme";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function Portfolio() {
     return (
@@ -14,6 +15,7 @@ export default function Portfolio() {
             </Head>
             <ThemeProvider theme={DARK_THEME}>
                 <Home />
+                <SpeedInsights />
             </ThemeProvider>
         </>
     );
