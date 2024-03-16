@@ -2,9 +2,11 @@ import Home from "@/components/V2/Home";
 import { DARK_THEME } from "@/styles/Theme";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { useRouter } from "next/router";
 
 export default function Portfolio() {
+    const router = useRouter();
     return (
         <>
             <Head>
@@ -15,7 +17,7 @@ export default function Portfolio() {
             </Head>
             <ThemeProvider theme={DARK_THEME}>
                 <Home />
-                <SpeedInsights />
+                <SpeedInsights route={router.pathname}/>
             </ThemeProvider>
         </>
     );
