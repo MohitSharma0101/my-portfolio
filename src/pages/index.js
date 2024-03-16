@@ -3,6 +3,7 @@ import { DARK_THEME } from "@/styles/Theme";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 import { useRouter } from "next/router";
 
 export default function Portfolio() {
@@ -18,6 +19,7 @@ export default function Portfolio() {
             <ThemeProvider theme={DARK_THEME}>
                 <Home />
                 <SpeedInsights route={router.pathname}/>
+                <Analytics />
             </ThemeProvider>
         </>
     );
