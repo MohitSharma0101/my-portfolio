@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { GithubIcon, LinkedInIcon, MailIcon, TwiterIcon } from "../Icons/Icons";
+import { ExternalLinkIcon, GithubIcon, LinkedInIcon, MailIcon, TwiterIcon } from "../Icons/Icons";
 import QUERIES from "../Utils/Queries";
+import { RESUME_LINK } from "../Data/resume";
+import TagWithIcon from "../TagWithIcon";
 
 export const NAV_LINKS = [
     {
@@ -59,7 +61,7 @@ export default function Header() {
             }
         }, {
             rootMargin: "0px",
-            threshold: [0.2,1],
+            threshold: [0.2, 1],
         });
         //Get custom attribute data-section from all sections
         const sections = document.querySelectorAll('[data-section]');
@@ -88,6 +90,12 @@ export default function Header() {
                     <Description>
                         Driven by curiosity, creating dynamic digital experiences for the web and app.
                     </Description>
+                    <TagWithIcon
+                        text={"Resume"}
+                        Icon={ExternalLinkIcon}
+                        backgroundColor={"rgb(52 211 153)"}
+                        link={RESUME_LINK}
+                    />
                 </Info>
                 <Navigation.List>
                     {
@@ -118,7 +126,6 @@ export default function Header() {
                         </Social.Item>
                     ))
                 }
-
             </Social>
         </Wrapper>
     );

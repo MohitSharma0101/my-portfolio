@@ -32,7 +32,7 @@ export function GithubIcon({ color, stroke, size }) {
 
 export function ExternalLinkIcon({ id, color, size, stroke }) {
     return (
-        <svg id={id} xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-external-link" width={size ?? 24} height={size ?? 24} viewBox="0 0 24 24" strokeWidth={stroke ?? 2} stroke={color ?? "currentColor"} fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <svg id={id} xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-external-link" width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" strokeWidth={stroke ?? 2} stroke={color ?? "currentColor"} fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
             <path d="M10 14l10 -10"></path>
